@@ -1,11 +1,12 @@
 ---
+import RootLayout from './RootLayout.astro'
 import Footer from "../components/Footer.astro"
 import useFormattedDate from "../hooks/useFormattedDate"
 
 const { frontmatter } = Astro.props
 ---
 
-<section class='pt-8 sm:pt-24 mx-auto max-w-screen-md space-y-2'>
+<RootLayout title={frontmatter.title}>
   <h1 class='px-5 text-2xl font-semibold text-gray-800'>{frontmatter.title}</h1>
 
   <img
@@ -25,4 +26,4 @@ const { frontmatter } = Astro.props
   </div>
 
   <Footer />
-</section>
+</RootLayout>
