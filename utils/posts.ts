@@ -14,28 +14,27 @@ export const posts: Post[] = [
     link: "post-3",
     readingDuration: 5,
     title: "Announcing Astro Studio 1.0",
-    publishedOn: new Date(2024, 2, 1),
+    publishedOn: new Date(2024, 2, 12),
     category: "Engineering",
     summary:
       "Astro is launching a hosted service in 2024. It's not a web hosting company. It's not a CMS. It's something entirely new for the web ecosystem and it will be available exclusively for Astro. We're calling it: Astro Studio. Astro Studio is a globally-distributed edge data platform, built for Astro. Connect any new or existing Astro project to a dedicated hosted database in seconds. It's fast everywhere, secure, and unbelievably easy-to-use. Astro Studio comes with a generous free tier. This is our first paid product, and we want it to be accessible to everyone who uses Astro. We take this commitment to our users seriously.",
   },
-  
+
   {
     id: 2,
-    link: "post-1",
-    title: "Announcing Astro 4.3",
+    link: "post-2",
+    title: "Announcing Astro 4.4",
     readingDuration: 5,
-    publishedOn: new Date(2024, 2, 1),
+    publishedOn: new Date(2024, 1, 15),
     category: "Changelog",
-    summary:
-      "Astro 4.3 is now available! This release includes a new experimental i18n feature to try out, and improvements to working with your build output, component prop types, Markdown images, and more. How to upgrade: to take advantage of the latest features, make sure you’re running the latest version of Astro. You can upgrade to Astro 4.3 by running the @astrojs/upgrade command:",
+    summary: "Astro 4.4 is now available! This release includes performance audits for the dev toolbar, improved streaming performance, the ability to automatically infer the dimensions of remote images, and more. How to upgrade - to take advantage of the latest features, make sure you’re running the latest version of Astro. You can upgrade to Astro 4.4 by running the @astrojs/upgrade command:"
   },
 
   {
     id: 3,
-    link: "post-2",
+    link: "post-1",
     readingDuration: 8,
-    publishedOn: new Date(2024, 1, 11),
+    publishedOn: new Date(2024, 0, 11),
     title: "What's new in Astro - January 2024",
     category: "Company News",
     summary:
