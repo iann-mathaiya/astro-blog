@@ -2,9 +2,9 @@
 import RootLayout from "../layouts/RootLayout.astro"
 import useFormattedDate from '../hooks/useFormattedDate'
 
-const today = new Date()
+const currentDate = new Date()
 
-const formattedDate = useFormattedDate(today)
+const today = useFormattedDate(currentDate)
 ---
 
 <RootLayout title='Astro 🚀'>
@@ -17,6 +17,6 @@ const formattedDate = useFormattedDate(today)
         >About</a
       >
     </div>
-    <p class='text-xs text-gray-400'>{formattedDate}</p>
+    <p class='text-xs text-gray-400'>{today}</p>
   </div>
 </RootLayout>
