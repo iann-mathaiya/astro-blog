@@ -17,7 +17,7 @@ export const posts: Post[] = [
     publishedOn: new Date(2024, 2, 1),
     category: "Changelog",
     summary:
-      "Astro 4.3 is now available! This release includes a new experimental i18n feature to try out, and improvements to working with your build output, component prop types, Markdown images, and more.",
+      "Astro 4.3 is now available! This release includes a new experimental i18n feature to try out, and improvements to working with your build output, component prop types, Markdown images, and more. How to upgrade: to take advantage of the latest features, make sure you’re running the latest version of Astro. You can upgrade to Astro 4.3 by running the @astrojs/upgrade command:",
   },
 
   {
