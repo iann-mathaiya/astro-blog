@@ -1,36 +1,12 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro"
 
-const pageTitle = "About Me"
-
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-}
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
-
-const happy = true
-const finished = false
-const goal = 3
-
-const skillColor = "navy"
-const fontWeight = "bold"
-const textCase = "uppercase"
+const topics = ["Astro, TailwindCSS, Drizzle"]
 ---
 
 <RootLayout title='About Astro'>
-  <div class='p-24 mx-auto max-w-screen-lg'>
-    <div class='flex gap-4 text-sm'>
-      <a href='/'>⬅️</a>
-      <h1>About 🚀</h1>
-    </div>
-
-    <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class='skill'>{skill}</li>)}
-    </ul>
-  </div>
+  <ul class='mt-12 space-y-10'>
+    {topics.map((topic) => <li class='px-5'>{topic}</li>)}
+  </ul>
+  {topics.map((topic) => <p class='px-5'>{topic}</p>)}
 </RootLayout>

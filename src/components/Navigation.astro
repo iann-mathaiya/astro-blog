@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro"
+import HamburgerMenu from './HamburgerMenu.astro'
 
 type navLink = {
   id: number
@@ -14,9 +15,9 @@ const navLinks: navLink[] = [
 ]
 ---
 
-<header class="flex justify-between items-start">
+<header class="px-5 flex justify-between items-center">
   <Logo />
-  <nav class='nav-links flex gap-4'>
+  <nav class='nav-links hidden sm:flex gap-4'>
     {
       navLinks.map(({ label, href }) => (
         <a
@@ -28,4 +29,5 @@ const navLinks: navLink[] = [
       ))
     }
   </nav>
+  <HamburgerMenu />
 </header>
