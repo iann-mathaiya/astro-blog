@@ -1,13 +1,22 @@
 ---
-import RootLayout from '../layouts/RootLayout.astro'
+import RootLayout from "../layouts/RootLayout.astro"
+import useFormattedDate from '../hooks/useFormattedDate'
 
+const today = new Date()
+
+const formattedDate = useFormattedDate(today)
 ---
 
-<RootLayout title="Astro 🚀">
-	<div class="p-24 mx-auto max-w-screen-lg">
-		<div class="flex justify-between text-sm">
-			<h1>Astro 🚀</h1>
-			<a href="/about">About</a>
-		</div>
-	</div>
+<RootLayout title='Astro 🚀'>
+  <div class='p-24 mx-auto max-w-screen-lg'>
+    <div class='flex justify-between items-center'>
+      <h1 class='text-base'>Astro 🚀</h1>
+      <a
+        href='/about'
+        class='text-sm text-gray-500 hover:text-sky-600 hover:underline hover:decoration-sky-400 transition-colors'
+        >About</a
+      >
+    </div>
+    <p class='text-xs text-gray-400'>{formattedDate}</p>
+  </div>
 </RootLayout>
