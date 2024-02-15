@@ -7,7 +7,7 @@ author: "Astro Learner"
 image:
   url: "https://docs.astro.build/assets/arc.webp"
   alt: "The full Astro logo."
-tags: ["astro", "blogging", "learning in public"]
+tags: ["astro", "blogging", "learning in public", "new"]
 ---
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
@@ -33,4 +33,3 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-

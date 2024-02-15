@@ -7,7 +7,7 @@ image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "Thumbnail of Astro rays."
 pubDate: "2024 3 12"
-tags: ["astro", "learning in public", "setbacks", "community"]
+tags: ["astro", "learning in public", "setbacks", "community", "astro-studio"]
 ---
 
 It's not a web hosting company. It's not a CMS. It's something entirely new for the web ecosystem and it will be available exclusively for Astro. We're calling it: Astro Studio. Astro Studio is a globally-distributed edge data platform, built for Astro. Connect any new or existing Astro project to a dedicated hosted database in seconds. It's fast everywhere, secure, and unbelievably easy-to-use.
