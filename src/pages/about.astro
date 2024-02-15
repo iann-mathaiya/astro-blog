@@ -1,5 +1,25 @@
 ---
+import "../styles/global.css"
 import RootLayout from "../layouts/RootLayout.astro"
+
+const pageTitle = "About Me"
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+}
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
+
+const happy = true
+const finished = false
+const goal = 3
+
+const skillColor = "navy"
+const fontWeight = "bold"
+const textCase = "uppercase"
 ---
 
 <RootLayout title='About Astro'>
@@ -8,5 +28,10 @@ import RootLayout from "../layouts/RootLayout.astro"
       <a href='/'>⬅️</a>
       <h1>About 🚀</h1>
     </div>
+
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class='skill'>{skill}</li>)}
+    </ul>
   </div>
 </RootLayout>
