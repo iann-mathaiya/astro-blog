@@ -1,0 +1,13 @@
+---
+import useFormattedDate from "../hooks/useFormattedDate"
+
+const currentDate = new Date()
+
+const today = useFormattedDate(currentDate)
+---
+
+<div class='px-5'>
+  <h1 class='text-base'>Astro 🚀</h1>
+
+  <p class='text-xs text-gray-400'>{today}</p>
+</div>
