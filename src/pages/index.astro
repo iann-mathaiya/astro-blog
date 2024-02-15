@@ -33,7 +33,9 @@ const today = useFormattedDate(currentDate)
               <h2 class='text-xl font-semibold text-gray-800 group-hover:text-orange-500'>
                 {post.title}
               </h2>
-              <p class='text-sm text-gray-500 line-clamp-3 group-hover:text-gray-800'>{post.summary}</p>
+              <p class='text-sm text-gray-500 line-clamp-3 group-hover:text-gray-800'>
+                {post.summary}
+              </p>
               <div class='flex items-center gap-2 text-xs text-gray-400 '>
                 <span>{useFormattedDate(post.publishedOn)}</span>
                 <p>·</p>
