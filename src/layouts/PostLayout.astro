@@ -1,6 +1,5 @@
 ---
-import RootLayout from './RootLayout.astro'
-import Footer from "../components/Footer.astro"
+import RootLayout from "./RootLayout.astro"
 import useFormattedDate from "../hooks/useFormattedDate"
 
 const { frontmatter } = Astro.props
@@ -24,6 +23,4 @@ const { frontmatter } = Astro.props
   <div class='px-5 text-sm text-gray-600'>
     <slot />
   </div>
-
-  <Footer />
 </RootLayout>
