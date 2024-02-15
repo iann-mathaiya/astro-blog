@@ -1,14 +1,11 @@
 ---
-import { Icon } from "astro-icon/components"
+import SocialLinks from './SocialLinks.astro'
 ---
 
 <footer class='px-28'>
-  <div class="flex justify-between items-center text-gray-600">
-    <a href='https://github.com/iann-mathaiya/astro-blog' target="_blank">
-      <Icon name='github' size={24} class='hover:text-orange-500' />
-    </a>
-    <a href='https://twitter.com/IanMathaiya' target="_blank">
-        <Icon name='bi:twitter-x' size={20} class='hover:text-orange-500' />
-      </a>
-  </div>
+    <div class="flex justify-between items-center">
+        <p class="text-xs text-gray-400">Proudly Open-Source</p>
+        <SocialLinks/>
+    </div>
+  
 </footer>

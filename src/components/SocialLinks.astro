@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components"
+
+type Link = {
+  id: number
+  href: string
+  size: number
+  iconSrc: string
+}
+
+const links: Link[] = [
+  {
+    id: 1,
+    size: 24,
+    iconSrc: "github",
+    href: "https://github.com/iann-mathaiya/astro-blog",
+  },
+  {
+    id: 2,
+    size: 18,
+    iconSrc: "bi:twitter-x",
+    href: "https://twitter.com/IanMathaiya",
+  },
+]
+---
+
+<div class='flex items-center gap-4 text-gray-600'>
+  {
+    links.map(({ iconSrc, href, size }) => (
+      <a href={href} target='_blank'>
+        <Icon name={iconSrc} size={size} class='hover:text-orange-500' />
+      </a>
+    ))
+  }
+</div>
