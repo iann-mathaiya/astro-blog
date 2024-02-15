@@ -37,3 +37,9 @@ npx @astrojs/upgrade
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
+<span style="color:blue">[Continue reading...](https://astro.build/blog/astro-440/)<span>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+

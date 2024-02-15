@@ -1,24 +1,28 @@
 ---
-const { frontmatter } = Astro.props
+import Footer from "../components/Footer.astro"
 import useFormattedDate from "../hooks/useFormattedDate"
+
+const { frontmatter } = Astro.props
 ---
 
 <section class='pt-8 sm:pt-24 mx-auto max-w-screen-md space-y-2'>
-  <h1 class='text-2xl font-semibold text-gray-800'>{frontmatter.title}</h1>
+  <h1 class='px-5 text-2xl font-semibold text-gray-800'>{frontmatter.title}</h1>
 
   <img
     src={frontmatter.image.url}
     alt={frontmatter.image.alt}
-    class='w-fit h-auto'
+    class='px-5 w-fit h-auto'
   />
 
-  <div class='flex items-center gap-2 text-xs text-gray-400'>
+  <div class='px-5 flex items-center gap-2 text-xs text-gray-400'>
     <p>{useFormattedDate(new Date(frontmatter.pubDate))}</p>
     <p>·</p>
     <p>{frontmatter.author}</p>
   </div>
 
-  <div class='text-sm text-gray-600'>
+  <div class='px-5 text-sm text-gray-600'>
     <slot />
   </div>
+
+  <Footer />
 </section>

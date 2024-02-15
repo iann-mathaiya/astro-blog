@@ -4,8 +4,8 @@ title: Announcing Astro Studio 1.0
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
 image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "Thumbnail of Astro rays."
+  url: "https://docs.astro.build/assets/rays.webp"
+  alt: "Thumbnail of Astro rays."
 pubDate: "2024 3 12"
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
@@ -23,6 +23,12 @@ If this sounds exciting, join our waitlist! We'll be accepting people into our p
 <p>&nbsp;</p>
 
 I can't wait for you to join us.
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<span style="color:blue">[Read the original announcement](https://studio.astro.build/)<span>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
