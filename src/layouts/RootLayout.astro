@@ -14,14 +14,13 @@ const { title } = Astro.props
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='pt-8 sm:pt-24 mx-auto max-w-screen-md space-y-2'>
+  <body class='pt-8 sm:pt-24 mx-auto max-w-screen-md'>
     <Navigation />
     <slot />
     <Footer />
 
     <script>
       import "../scripts/menu.js"
-      
     </script>
   </body>
 </html>

@@ -1,11 +1,29 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro"
+import Greeting from "../components/Greeting.tsx"
 
-const topics = ["Astro", "TailwindCSS", "Drizzle", "Postgres"]
+const nicknames = [
+  "Star Walker",
+  "Cosmic Explorer",
+  "Galactic Knight",
+  "Space Pioneer",
+  "Infinity Pilot",
+]
+
+const topics = ["Lucia Auth", "TailwindCSS", "Drizzle ORM", "PostgreSQL"]
 ---
 
 <RootLayout title='About Astro'>
-  <ul class='mt-12 space-y-2'>
-    {topics.map((topic) => <li class='px-5'>{topic}</li>)}
-  </ul>
+  <section class='my-12 px-5 space-y-4'>
+    <Greeting client:load nicknames={nicknames} />
+
+    <p class='text-sm text-gray-700 text-balance'>
+      Astro Rocket is a project built to showcase all the great feactures that
+      make Astro the web framework for content-driven websites. The project also shows how well Astro integrates other js frameworks such as:
+    </p>
+
+    <ul class='mt-12 px-4 space-y-2 text-sm text-gray-700 list-disc marker:text-orange-500'>
+      {topics.map((topic) => <li>{topic}</li>)}
+    </ul>
+  </section>
 </RootLayout>
