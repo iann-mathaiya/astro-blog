@@ -1,12 +1,13 @@
 import { sessions, users } from "./schema"
-import { createPool } from "@vercel/postgres"
-import { drizzle } from "drizzle-orm/vercel-postgres"
-import { DrizzlePostgreSQLAdapter } from "@lucia-auth/adapter-drizzle"
+import { drizzle } from "drizzle-orm/libsql"
+import { createClient } from "@libsql/client"
+import { DrizzleSQLiteAdapter } from "@lucia-auth/adapter-drizzle"
 
-const pool = createPool({
-  connectionString: import.meta.env.POSTGRES_URL + "?sslmode=require",
+const client = createClient({
+  url: import.meta.env.TURSO_DB_URL,
+  authToken: import.meta.env.TURSO_AUTH_TOKEN,
 })
 
-export const db = drizzle(pool)
+export const db = drizzle(client)
 
-export const adapter = new DrizzlePostgreSQLAdapter(db, sessions, users)
+export const adapter = new DrizzleSQLiteAdapter(db, sessions, users)

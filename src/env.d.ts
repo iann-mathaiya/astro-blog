@@ -7,3 +7,7 @@ declare namespace App {
 		user: import("lucia").User | null;
 	}
 }
+
+interface ImportMeta {
+	readonly env: ImportMetaEnv;
+  }
