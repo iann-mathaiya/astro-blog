@@ -1,0 +1,10 @@
+{
+    "id": 4,
+    "price": 300,
+    "quantity": 4,
+    "name": "Opal C1",
+    "category": "cameras",
+    "imageSrc": "./products/opal-camera.jpeg",
+    "description": "Crisp. Colorful. True to tone."
+  }
+  

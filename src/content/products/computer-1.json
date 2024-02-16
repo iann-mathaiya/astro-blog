@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "price": 149,
+    "quantity": 0,
+    "category": "computers",
+    "name": "Mini-ITX Computer-1",
+    "imageSrc": "./products/mini-itx.jpeg",
+    "description": "no big deal. we (teenage engieeering) made a mini-ITX pc chassis called computer–1. first released with a pure orange RAL 2004 powder coated finish, it's now also available in raw anodized aluminum"
+  }

@@ -1,0 +1,10 @@
+{
+    "id": 2,
+    "price": 149,
+    "quantity": 47,
+    "name": "Ear 2",
+    "category": "accessories",
+    "imageSrc": "./products/nothing-earbuds.jpeg",
+    "description": "Perfecting the path from artist to ear. So that music sounds just as it was intended."
+  }
+  

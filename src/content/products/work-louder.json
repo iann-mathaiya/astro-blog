@@ -1,0 +1,9 @@
+{
+    "id": 6,
+    "price": 159,
+    "quantity": 10,
+    "category": "keyboards",
+    "name": "Figma Creator Micro",
+    "imageSrc": "./products/work-louder.jpeg",
+    "description": "We “cmd+G”ed your Shortcuts!"
+  }
