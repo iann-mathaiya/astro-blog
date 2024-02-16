@@ -10,7 +10,7 @@ const products = await getCollection("products")
     {
       products.map((product) => (
         <li class='group border border-gray-100'>
-          <a href=''>
+          <a href={`/products/${product.id}/`}>
             <div class=" aspect-square overflow-hidden">
               <img
                 class='aspect-square object-contain object-center group-hover:scale-125 transition-all ease-in-out duration-500 delay-150'
