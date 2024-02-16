@@ -1,15 +1,19 @@
 ---
 import RootLayout from "../../layouts/RootLayout.astro"
+import type { InferGetStaticParamsType, InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md")
+  const allPosts: any = await Astro.glob("../posts/*.md")
 
   const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+    ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
   ]
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag))
+    const filteredPosts = allPosts.filter((post: any) =>
+      post.frontmatter.tags.includes(tag)
+    )
     return {
       params: { tag },
       props: { posts: filteredPosts },
@@ -17,7 +21,9 @@ export async function getStaticPaths() {
   })
 }
 
-const { tag } = Astro.params
+type Params = InferGetStaticParamsType<typeof getStaticPaths>
+
+const { tag } = Astro.params as Params
 const { posts } = Astro.props
 ---
 
@@ -26,7 +32,7 @@ const { posts } = Astro.props
 
   <ul>
     {
-      posts.map((post) => (
+      posts.map((post: any) => (
         <li>
           <a href={post.url}>{post.frontmatter.title}</a>
         </li>

@@ -1,12 +1,11 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro"
 
-const topics = ["Astro, TailwindCSS, Drizzle"]
+const topics = ["Astro", "TailwindCSS", "Drizzle", "Postgres"]
 ---
 
 <RootLayout title='About Astro'>
-  <ul class='mt-12 space-y-10'>
+  <ul class='mt-12 space-y-2'>
     {topics.map((topic) => <li class='px-5'>{topic}</li>)}
   </ul>
-  {topics.map((topic) => <p class='px-5'>{topic}</p>)}
 </RootLayout>
