@@ -1,9 +1,33 @@
 ---
-import { posts } from "../../utils/posts"
+import { getCollection } from "astro:content"
 import RootLayout from "../layouts/RootLayout.astro"
-import useFormattedDate from "../hooks/useFormattedDate"
+
+const products = await getCollection("products")
 ---
 
 <RootLayout title='Starlight Store 🚀'>
+  <ul class='mt-12 px-5 grid grid-cols-1 sm:grid-cols-3'>
+    {
+      products.map((product) => (
+        <li class='group border border-gray-100'>
+          <a href=''>
+            <div class=" aspect-square overflow-hidden">
+              <img
+                class='aspect-square object-contain object-center group-hover:scale-125 transition-all ease-in-out duration-500 delay-150'
+                src={product.data.imageSrc}
+                alt={`Image of the ${product.data.name}`}
+              />
+            </div>
 
+            <div class='px-4 py-2 flex items-center justify-between'>
+              <h1 class='text-xs text-gray-500'>{product.data.name}</h1>
+              <h2 class='text-xs text-gray-700 font-semibold group-hover:text-orange-500 transition-colors'>
+                ${product.data.price}
+              </h2>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </RootLayout>

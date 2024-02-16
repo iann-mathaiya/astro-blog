@@ -2,9 +2,9 @@
     "id": 4,
     "price": 300,
     "quantity": 4,
-    "name": "Opal C1",
-    "category": "cameras",
-    "imageSrc": "./products/opal-camera.jpeg",
-    "description": "Crisp. Colorful. True to tone."
+    "category": "speakers",
+    "name": "Argon0 Loudspeaker",
+    "description": "Zero compromise",
+    "imageSrc": "./products/argon-speaker.jpeg"
   }
   
