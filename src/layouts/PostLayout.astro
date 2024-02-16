@@ -6,21 +6,25 @@ const { frontmatter } = Astro.props
 ---
 
 <RootLayout title={frontmatter.title}>
-  <h1 class='px-5 text-2xl font-semibold text-gray-800'>{frontmatter.title}</h1>
+  <article class="mt-8 space-y-2">
+    <h1 class='px-5 text-2xl font-semibold text-gray-800'>
+      {frontmatter.title}
+    </h1>
 
-  <img
-    src={frontmatter.image.url}
-    alt={frontmatter.image.alt}
-    class='px-5 w-fit h-auto'
-  />
+    <img
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      class='px-5 w-fit h-auto'
+    />
 
-  <div class='px-5 flex items-center gap-2 text-xs text-gray-400'>
-    <p>{useFormattedDate(new Date(frontmatter.pubDate))}</p>
-    <p>·</p>
-    <p>{frontmatter.author}</p>
-  </div>
+    <div class='px-5 flex items-center gap-2 text-xs text-gray-400'>
+      <p>{useFormattedDate(new Date(frontmatter.pubDate))}</p>
+      <p>·</p>
+      <p>{frontmatter.author}</p>
+    </div>
 
-  <div class='px-5 text-sm text-gray-600'>
-    <slot />
-  </div>
+    <div class='px-5 text-sm text-gray-600'>
+      <slot />
+    </div>
+  </article>
 </RootLayout>
