@@ -3,8 +3,8 @@ import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
 export const users = pgTable("user", {
 	id: text("id").primaryKey(),
 	username: text('username').unique().notNull(),
-	emailAddress: text('email_address').notNull(),
-	hashed_password: text('hashed_password').notNull()
+	hashed_password: text('hashed_password').notNull(),
+	emailAddress: text('email_address').unique().notNull(),
 });
 
 export type User = typeof users.$inferSelect

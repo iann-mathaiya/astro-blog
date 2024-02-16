@@ -1,0 +1,23 @@
+---
+import RootLayout from "../layouts/RootLayout.astro"
+import FormInput from "../components/FormInput.astro"
+---
+
+<RootLayout title='Astro 🚀'>
+  <form
+    method='post'
+    action='/api/signup'
+    class='px-5 my-16 mx-auto max-w-full space-y-4'
+  >
+    <h1>Sign up</h1>
+
+    <FormInput name='username' label='Username' />
+    <FormInput name='email_address' label='Email Address' />
+    <FormInput name='password' label='Password' type='password' />
+
+    <button
+      class='w-2/4 inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'
+      >Continue</button
+    >
+  </form>
+</RootLayout>
