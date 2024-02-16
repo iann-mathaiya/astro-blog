@@ -1,11 +1,23 @@
+import type { FormEvent } from "react"
 import Button from "./Button"
 import FormInput from "./FormInput"
 
 export default function SignUpForm() {
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const formData = new FormData(e.target as HTMLFormElement)
+    const response = await fetch("/api/signup", {
+      method: "POST",
+      body: formData,
+    })
+    const data = await response.json()
+
+    console.log(data)
+  }
+
   return (
     <form
-      method='post'
-      action='/api/signup'
+      onSubmit={submit}
       className='px-5 my-16 flex flex-col items-center space-y-4'
     >
       <h1>Sign up</h1>

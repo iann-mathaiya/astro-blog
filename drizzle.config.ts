@@ -6,7 +6,7 @@ export default {
   out: "./src/db/migrations",
   driver: "pg",
   dbCredentials: {
-    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+    connectionString: import.meta.env.POSTGRES_URL + "?sslmode=require",
   },
   verbose: true,
   strict: true,

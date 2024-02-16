@@ -12,15 +12,10 @@ export async function POST(context: APIContext): Promise<Response> {
   const emailAddress = String(formData.get("email_address"))
   const password = String(formData.get("password"))
 
-  console.log(formData)
-
-  // username must be between 4 ~ 31 characters, and only consists of lowercase letters, 0-9, -, and _
-  // keep in mind some database (e.g. mysql) are case insensitive
   if (
     typeof username !== "string" ||
     username.length < 3 ||
-    username.length > 31 ||
-    !/^[a-z0-9_-]+$/.test(username)
+    username.length > 31 
   ) {
     return new Response("Invalid username", {
       status: 400,
