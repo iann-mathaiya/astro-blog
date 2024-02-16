@@ -7,16 +7,16 @@ import FormInput from "../components/FormInput.astro"
   <form
     method='post'
     action='/api/signup'
-    class='px-5 my-16 mx-auto max-w-full space-y-4'
+    class='px-5 my-16 flex flex-col items-center space-y-4'
   >
     <h1>Sign up</h1>
 
     <FormInput name='username' label='Username' />
-    <FormInput name='email_address' label='Email Address' />
+    <FormInput name='email_address' label='Email Address' type='email' />
     <FormInput name='password' label='Password' type='password' />
 
     <button
-      class='w-2/4 inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'
+      class='w-2/4 inline-flex justify-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-orange-500 focus:outline-none focus-visible:ring-1 focus-visible:ring-orange-500 focus-visible:ring-offset-2'
       >Continue</button
     >
   </form>

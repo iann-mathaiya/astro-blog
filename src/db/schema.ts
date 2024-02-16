@@ -4,7 +4,7 @@ export const users = pgTable("user", {
 	id: text("id").primaryKey(),
 	username: text('username').unique().notNull(),
 	hashed_password: text('hashed_password').notNull(),
-	emailAddress: text('email_address').unique().notNull(),
+	email_address: text('email_address').unique().notNull(),
 });
 
 export type User = typeof users.$inferSelect
