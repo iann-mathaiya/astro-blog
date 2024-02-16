@@ -1,13 +1,15 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: Announcing Astro 4.4
+title: "Announcing Astro 4.4"
 author: Astro Core
-description: "After learning some Astro, I couldn't stop!"
+category: "Changelog"
+readingDuration: 4
 image:
   url: "https://docs.astro.build/assets/arc.webp"
   alt: "Thumbnail of Astro arcs."
 pubDate: "2024 02 15"
 tags: ["astro", "blogging", "learning in public", "successes", "version"]
+summary: "Astro 4.4 is now available! This release includes performance audits for the dev toolbar, improved streaming performance, the ability to automatically infer the dimensions of remote images, and more. How to upgrade - to take advantage of the latest features, make sure you’re running the latest version of Astro. You can upgrade to Astro 4.4 by running the @astrojs/upgrade command:"
+
 ---
 
 <p>&nbsp;</p>

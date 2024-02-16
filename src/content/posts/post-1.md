@@ -1,13 +1,14 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: Announcing Astro Studio 1.0
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
+title: "Announcing Astro Studio 1.0"
+author: Astro Core
+category: "Engineering"
+readingDuration: 2
 image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "Thumbnail of Astro rays."
 pubDate: "2024 3 12"
 tags: ["astro", "learning in public", "setbacks", "community", "astro-studio"]
+summary: "Astro is launching a hosted service in 2024. It's not a web hosting company. It's not a CMS. It's something entirely new for the web ecosystem and it will be available exclusively for Astro. We're calling it: Astro Studio. Astro Studio is a globally-distributed edge data platform, built for Astro. Connect any new or existing Astro project to a dedicated hosted database in seconds. It's fast everywhere, secure, and unbelievably easy-to-use. Astro Studio comes with a generous free tier. This is our first paid product, and we want it to be accessible to everyone who uses Astro. We take this commitment to our users seriously."
 ---
 
 It's not a web hosting company. It's not a CMS. It's something entirely new for the web ecosystem and it will be available exclusively for Astro. We're calling it: Astro Studio. Astro Studio is a globally-distributed edge data platform, built for Astro. Connect any new or existing Astro project to a dedicated hosted database in seconds. It's fast everywhere, secure, and unbelievably easy-to-use.
