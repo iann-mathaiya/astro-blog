@@ -7,7 +7,7 @@ export default async function POST(
 ) {
   try {
     const result =
-      await sql`CREATE TABLE Users ( username text(255), hashed_password text(255), email_address text(255) );`
+      await sql`CREATE TABLE Pets ( Name varchar(255), Owner varchar(255) );`
     return response.status(200).json({ result })
   } catch (error) {
     return response.status(500).json({ error })

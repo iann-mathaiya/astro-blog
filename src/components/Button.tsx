@@ -1,9 +1,9 @@
 type ButtonProps = {
-  type: "button" | "submit" | "reset"
   children: React.ReactNode
+  type?: "button" | "submit" | "reset"
 }
 
-export default function Button({ type, children }: ButtonProps) {
+export default function Button({ type="button", children }: ButtonProps) {
   return (
     <button
       type={type}
