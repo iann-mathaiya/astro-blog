@@ -7,6 +7,7 @@ import react from "@astrojs/react"
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
+  "verbatimModuleSyntax": true,
   integrations: [tailwind(), icon(), react()],
   allowImportingTsExtensions: true,
   vite: {
