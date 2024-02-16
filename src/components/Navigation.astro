@@ -1,7 +1,7 @@
 ---
 import Logo from "./Logo.astro"
-import ThemeIcon from './ThemeIcon.astro'
-import HamburgerMenu from './HamburgerMenu.astro'
+import ThemeIcon from "./ThemeIcon.astro"
+import HamburgerMenu from "./HamburgerMenu.astro"
 
 type navLink = {
   id: number
@@ -16,9 +16,9 @@ const navLinks: navLink[] = [
 ]
 ---
 
-<header class="px-5 flex justify-between items-center">
+<header class='px-5 flex justify-between items-center'>
   <Logo />
-  <nav class='nav-links hidden sm:flex gap-4'>
+  <nav transition:animate='slide' class='nav-links hidden sm:flex gap-4'>
     {
       navLinks.map(({ label, href }) => (
         <a

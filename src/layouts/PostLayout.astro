@@ -1,4 +1,5 @@
 ---
+import { fade } from "astro:transitions"
 import RootLayout from "./RootLayout.astro"
 import useFormattedDate from "../hooks/useFormattedDate"
 
@@ -6,7 +7,7 @@ const { frontmatter } = Astro.props
 ---
 
 <RootLayout title={frontmatter.title}>
-  <article class="mt-8 space-y-2">
+  <article transition:animate={fade({ duration: '1s' })} class="mt-8 space-y-2">
     <h1 class='px-5 text-2xl font-semibold text-gray-800'>
       {frontmatter.title}
     </h1>
