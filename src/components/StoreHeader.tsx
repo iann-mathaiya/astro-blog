@@ -1,6 +1,6 @@
 import type { User } from "lucia"
 import LogoutForm from "./LogoutForm"
-import { LogOutIcon, ShoppingCartIcon } from "lucide-react"
+import { LogInIcon, ShoppingCartIcon } from "lucide-react"
 
 export default function StoreHeader({ user }: { user: User | null }) {
   return (
@@ -10,12 +10,21 @@ export default function StoreHeader({ user }: { user: User | null }) {
         <div className='flex items-center gap-2'>
           <a
             href='/cart'
-            className='text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded'
+            className='p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded'
           >
             <ShoppingCartIcon size={18} />
           </a>
           <LogoutForm />
         </div>
+      )}
+
+      {!user && (
+        <a
+          href='/login'
+          className='p-2 text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded'
+        >
+          <LogInIcon size={18} />
+        </a>
       )}
     </div>
   )
