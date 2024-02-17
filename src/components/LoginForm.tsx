@@ -9,7 +9,7 @@ export default function LoginForm() {
     const formData = new FormData(e.target as HTMLFormElement)
     const response = await fetch("/api/login", {
       method: "POST",
-      body: formData,
+      body: formData
     })
     const data = await response.json()
 

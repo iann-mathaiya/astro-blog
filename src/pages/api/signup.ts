@@ -15,11 +15,14 @@ export async function POST(context: APIContext): Promise<Response> {
   if (
     typeof username !== "string" ||
     username.length < 3 ||
-    username.length > 31 
+    username.length > 31
   ) {
-    return new Response("Invalid username", {
-      status: 400,
-    })
+    return new Response(
+      JSON.stringify({
+        message: "invalid username",
+        status: 400,
+      })
+    )
   }
 
   if (
@@ -27,24 +30,23 @@ export async function POST(context: APIContext): Promise<Response> {
     password.length < 6 ||
     password.length > 255
   ) {
-    return new Response("Invalid password", {
-      status: 400,
-    })
+    return new Response(
+      JSON.stringify({
+        message: "invalid password",
+        status: 400,
+      })
+    )
   }
 
   const userId = generateId(15)
   const hashedPassword = await new Argon2id().hash(password)
 
-  await db
-    .insert(users)
-    .values(
-      {
-        id: userId,
-        username: username,
-        hashed_password: hashedPassword,
-        email_address: emailAddress.toLowerCase(),
-      }
-    )
+  await db.insert(users).values({
+    id: userId,
+    username: username,
+    hashed_password: hashedPassword,
+    email_address: emailAddress.toLowerCase(),
+  })
 
   const session = await lucia.createSession(userId, {})
   const sessionCookie = lucia.createSessionCookie(session.id)
@@ -54,5 +56,10 @@ export async function POST(context: APIContext): Promise<Response> {
     sessionCookie.attributes
   )
 
-  return context.redirect("/")
+  return new Response(
+    JSON.stringify({
+      message: "account created successfully",
+      status: 200,
+    })
+  )
 }

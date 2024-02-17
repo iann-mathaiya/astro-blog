@@ -8,11 +8,12 @@ export default function SignUpForm() {
     const formData = new FormData(e.target as HTMLFormElement)
     const response = await fetch("/api/signup", {
       method: "POST",
-      body: formData,
+      body: JSON.stringify(formData),
     })
     const data = await response.json()
 
     console.log(data)
+
   }
 
   return (

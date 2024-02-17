@@ -62,7 +62,7 @@ export async function POST(context: APIContext): Promise<Response> {
   }
 
   const session = await lucia.createSession(existingUser[0].id, {})
-  
+
   const sessionCookie = lucia.createSessionCookie(session.id)
   context.cookies.set(
     sessionCookie.name,
@@ -70,5 +70,10 @@ export async function POST(context: APIContext): Promise<Response> {
     sessionCookie.attributes
   )
 
-  return context.redirect("/")
+  return new Response(
+    JSON.stringify({
+      message: "logged in successfully",
+      status: 200,
+    })
+  )
 }
