@@ -16,20 +16,23 @@ export default function LoginForm() {
   }
 
   return (
+    <form
+      onSubmit={submit}
+      className='px-5 my-16 flex flex-col items-center space-y-4'
+    >
+      <h1 className='text-base text-gray-700 font-semibold'>Login</h1>
 
-      <form
-        onSubmit={submit}
-        className='px-5 my-16 flex flex-col items-center space-y-4'
+      <FormInput name='email_address' label='Email Address' type='email' />
+      <FormInput name='password' label='Password' type='password' />
+
+      <Button type='submit'>Continue</Button>
+
+      <a
+        href='/signup'
+        className='text-sm text-gray-500 underline underline-offset-2 hover:text-orange-500'
       >
-        <h1>Login</h1>
-
-        <FormInput name='email_address' label='Email Address' type='email' />
-        <FormInput name='password' label='Password' type='password' />
-
-        <Button type='submit'>Continue</Button>
-        
-        <a href="/signup" className='text-sm text-gray-500 underline underline-offset-2 hover:text-orange-500'>Create Account</a>
-      </form>
-
+        Create account
+      </a>
+    </form>
   )
 }

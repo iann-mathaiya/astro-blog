@@ -14,7 +14,9 @@ const data = Astro.locals
 
 <RootLayout title='Starlight Store 🚀'>
   <StoreHeader client:load user={data.user} />
-  <ul class='mt-4 px-5 grid grid-cols-1 sm:grid-cols-3'>
+  <ul
+    class='mt-4 px-5 grid grid-cols-1 sm:grid-cols-3'
+  >
     {
       products.map((product) => (
         <li class='group border border-gray-100'>

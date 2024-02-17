@@ -1,4 +1,5 @@
 ---
+import { fade } from "astro:transitions"
 import { getCollection } from "astro:content"
 import Product from "../../components/Product"
 import type { CollectionEntry } from "astro:content"
@@ -24,5 +25,7 @@ const { product } = Astro.props as ProductProps
 
 <RootLayout title='Starlight Store 🚀'>
   <StoreHeader client:load user={data.user} />
-  <Product client:load product={product} user={data.user} />
+  <div transition:animate={fade({ duration: '1s' })}>
+    <Product client:load product={product} user={data.user} />
+  </div>
 </RootLayout>

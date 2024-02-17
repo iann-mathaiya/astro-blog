@@ -21,13 +21,13 @@ export default function SignUpForm() {
         onSubmit={submit}
         className='px-5 my-16 flex flex-col items-center space-y-4'
       >
-        <h1>Sign up</h1>
+        <h1 className='text-base text-gray-700 font-semibold'>Sign up</h1>
 
         <FormInput name='username' label='Username' />
         <FormInput name='email_address' label='Email Address' type='email' />
         <FormInput name='password' label='Password' type='password' />
 
-        <Button type='submit'>Continue</Button>
+        <Button type='submit'>Create Account</Button>
         <a href='/login' className='text-sm text-gray-500 underline underline-offset-2 hover:text-orange-500'>
           Login to my account instead
         </a>
