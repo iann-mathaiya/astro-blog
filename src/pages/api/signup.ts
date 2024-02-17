@@ -41,8 +41,8 @@ export async function POST(context: APIContext): Promise<Response> {
       {
         id: userId,
         username: username,
-        email_address: emailAddress,
         hashed_password: hashedPassword,
+        email_address: emailAddress.toLowerCase(),
       }
     )
 
