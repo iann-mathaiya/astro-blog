@@ -7,9 +7,9 @@ const products = await getCollection("products")
 
 const data = Astro.locals
 
-if (!data.user) {
-  return Astro.redirect("/login")
-}
+// if (!data.user) {
+//   return Astro.redirect("/login")
+// }
 ---
 
 <RootLayout title='Starlight Store 🚀'>

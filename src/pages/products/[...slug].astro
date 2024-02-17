@@ -1,8 +1,11 @@
 ---
 import { getCollection } from "astro:content"
-import Button from "../../components/Button"
+import Product from "../../components/Product"
 import type { CollectionEntry } from "astro:content"
+import StoreHeader from "../../components/StoreHeader"
 import RootLayout from "../../layouts/RootLayout.astro"
+
+const data = Astro.locals
 
 interface ProductProps {
   product: CollectionEntry<"products">
@@ -20,30 +23,6 @@ const { product } = Astro.props as ProductProps
 ---
 
 <RootLayout title='Starlight Store 🚀'>
-  <section class='px-5 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4'>
-    <div class='aspect-square overflow-hidden'>
-      <img
-        class='aspect-square object-contain object-center hover:scale-125 transition-all ease-in-out duration-500 delay-150'
-        src={product.data.imageSrc}
-        alt={`Image of the ${product.data.name}`}
-      />
-    </div>
-
-    <div class='space-y-6 sm:space-y-10'>
-      <div class='flex items-center justify-between'>
-        <h1 class='text-base text-gray-500 font-medium'>{product.data.name}</h1>
-        <h2
-          class='text-2xl text-gray-800 font-semibold group-hover:text-orange-500 transition-colors'
-        >
-          ${product.data.price}
-        </h2>
-      </div>
-
-      <p class='text-sm text-balance text-gray-500'>
-        {product.data.description}
-      </p>
-
-      <Button>Add to cart</Button>
-    </div>
-  </section>
+  <StoreHeader client:load user={data.user} />
+  <Product client:load product={product} user={data.user} />
 </RootLayout>
