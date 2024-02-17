@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content"
+import ProductCard from "../../components/ProductCard"
+import RootLayout from "../../layouts/RootLayout.astro"
+
+export async function getStaticPaths() {
+  const products = await getCollection("products")
+
+  const uniqueCategories = [
+    ...new Set(products.map((product: any) => product.data.category).flat()),
+  ]
+
+  return uniqueCategories.map((category) => {
+    const filteredProducts = products.filter((product: any) =>
+      product.data.category.includes(category)
+    )
+
+    return {
+      params: { category },
+      props: { products: filteredProducts },
+    }
+  })
+}
+
+const { category } = Astro.params
+const { products } = Astro.props
+---
+
+<RootLayout title={category}>
+  <div class='px-5 my-4'>
+    <h1 class='text-sm text-gray-500 capitalize'>{category}</h1>
+
+    <ul class='mt-4 grid grid-cols-1 sm:grid-cols-3'>
+      {
+        products.map((product) => (
+          <ProductCard product={product} />
+        ))
+      }
+    </ul>
+  </div>
+</RootLayout>

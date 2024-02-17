@@ -10,7 +10,7 @@ type ProductProps = {
 export default function Product({ user, product }: ProductProps) {
   function addToCart() {
     if (!user) {
-      return window.location.href = '/login'
+      return (window.location.href = "/login")
     }
   }
 
@@ -34,9 +34,18 @@ export default function Product({ user, product }: ProductProps) {
           </h2>
         </div>
 
-        <p className='text-sm text-balance text-gray-500'>
-          {product.data.description}
-        </p>
+        <div className='space-y-2'>
+          <a
+            href={`/categories/${product.data.category}`}
+            className='text-xs text-gray-500 hover:text-orange-500'
+          >
+            #{product.data.category}
+          </a>
+
+          <p className='text-sm text-balance text-gray-500'>
+            {product.data.description}
+          </p>
+        </div>
 
         <Button onClick={addToCart}>Add to cart</Button>
       </div>
