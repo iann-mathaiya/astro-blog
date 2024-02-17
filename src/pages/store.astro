@@ -1,17 +1,25 @@
 ---
 import { getCollection } from "astro:content"
 import RootLayout from "../layouts/RootLayout.astro"
+import StoreHeader from "../components/StoreHeader"
 
 const products = await getCollection("products")
+
+const data = Astro.locals
+
+if (!data.user) {
+  return Astro.redirect("/login")
+}
 ---
 
 <RootLayout title='Starlight Store 🚀'>
-  <ul class='mt-12 px-5 grid grid-cols-1 sm:grid-cols-3'>
+  <StoreHeader client:load user={data.user} />
+  <ul class='mt-4 px-5 grid grid-cols-1 sm:grid-cols-3'>
     {
       products.map((product) => (
         <li class='group border border-gray-100'>
           <a href={`/products/${product.id}/`}>
-            <div class=" aspect-square overflow-hidden">
+            <div class=' aspect-square overflow-hidden'>
               <img
                 class='aspect-square object-contain object-center group-hover:scale-125 transition-all ease-in-out duration-500 delay-150'
                 src={product.data.imageSrc}
