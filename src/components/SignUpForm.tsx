@@ -10,10 +10,9 @@ export default function SignUpForm() {
       method: "POST",
       body: JSON.stringify(formData),
     })
-    const data = await response.json()
+    // const result = await response.json()
 
-    console.log(data)
-
+    if (response.status === 200) return (window.location.href = "/store")
   }
 
   return (

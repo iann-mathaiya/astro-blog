@@ -59,7 +59,12 @@ export async function POST(context: APIContext): Promise<Response> {
   return new Response(
     JSON.stringify({
       message: "account created successfully",
+    }),
+    {
       status: 200,
-    })
+      headers: {
+        Location: "/store",
+      },
+    }
   )
 }

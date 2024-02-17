@@ -6,8 +6,9 @@ export async function POST(context: APIContext): Promise<Response> {
     return new Response(
       JSON.stringify({
         message: "no auth session to log out",
+      }), {
         status: 401,
-      })
+      }
     )
   }
 
@@ -23,7 +24,12 @@ export async function POST(context: APIContext): Promise<Response> {
   return new Response(
     JSON.stringify({
       message: "logged out successfully",
+    }),
+    {
       status: 200,
-    })
+      headers: {
+        Location: "/login",
+      },
+    }
   )
 }

@@ -1,3 +1,4 @@
+import * as schema from "./schema"
 import { sessions, users } from "./schema"
 import { drizzle } from "drizzle-orm/libsql"
 import { createClient } from "@libsql/client"
@@ -8,6 +9,6 @@ const client = createClient({
   authToken: import.meta.env.TURSO_AUTH_TOKEN,
 })
 
-export const db = drizzle(client)
+export const db = drizzle(client, { schema })
 
 export const adapter = new DrizzleSQLiteAdapter(db, sessions, users)

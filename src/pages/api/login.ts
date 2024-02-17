@@ -1,10 +1,10 @@
+import type { APIContext } from "astro"
 import { Argon2id } from "oslo/password"
 
+import { eq } from "drizzle-orm"
 import { db } from "../../db/drizzle"
 import { lucia } from "../../lib/auth"
-import type { APIContext } from "astro"
 import { users } from "../../db/schema"
-import { eq } from "drizzle-orm"
 
 export async function POST(context: APIContext): Promise<Response> {
   const formData = await context.request.formData()
@@ -31,37 +31,33 @@ export async function POST(context: APIContext): Promise<Response> {
     })
   }
 
-  const existingUser = await db
-    .select()
-    .from(users)
-    .where(eq(users.email_address, emailAddress))
+  const existingUser = await db.query.users.findFirst({
+    where: eq(users.email_address, emailAddress),
+  })
 
   if (!existingUser) {
-    // NOTE:
-    // Returning immediately allows malicious actors to figure out valid usernames from response times,
-    // allowing them to only focus on guessing passwords in brute-force attacks.
-    // As a preventive measure, you may want to hash passwords even for invalid usernames.
-    // However, valid usernames can be already be revealed with the signup page among other methods.
-    // It will also be much more resource intensive.
-    // Since protecting against this is none-trivial,
-    // it is crucial your implementation is protected against brute-force attacks with login throttling etc.
-    // If usernames are public, you may outright tell the user that the username is invalid.
-    return new Response("Incorrect username or password", {
-      status: 400,
-    })
+    return new Response(
+      JSON.stringify({
+        message: "User does not exit",
+        status: 401,
+      })
+    )
   }
 
   const validPassword = await new Argon2id().verify(
-    existingUser[0].hashed_password,
+    existingUser.hashed_password,
     password
   )
   if (!validPassword) {
-    return new Response("Incorrect username or password", {
-      status: 400,
-    })
+    return new Response(
+      JSON.stringify({
+        message: "Incorrect password",
+        status: 400,
+      })
+    )
   }
 
-  const session = await lucia.createSession(existingUser[0].id, {})
+  const session = await lucia.createSession(existingUser.id, {})
 
   const sessionCookie = lucia.createSessionCookie(session.id)
   context.cookies.set(
@@ -73,7 +69,12 @@ export async function POST(context: APIContext): Promise<Response> {
   return new Response(
     JSON.stringify({
       message: "logged in successfully",
+    }),
+    {
       status: 200,
-    })
+      headers: {
+        Location: "/store",
+      },
+    }
   )
 }
