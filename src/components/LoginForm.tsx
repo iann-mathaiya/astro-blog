@@ -16,7 +16,7 @@ export default function LoginForm() {
   }
 
   return (
-    <div>
+
       <form
         onSubmit={submit}
         className='px-5 my-16 flex flex-col items-center space-y-4'
@@ -27,7 +27,9 @@ export default function LoginForm() {
         <FormInput name='password' label='Password' type='password' />
 
         <Button type='submit'>Continue</Button>
+        
+        <a href="/signup" className='text-sm text-gray-500 underline underline-offset-2 hover:text-orange-500'>Create Account</a>
       </form>
-    </div>
+
   )
 }
