@@ -1,3 +1,4 @@
+import { sql } from "drizzle-orm"
 import { text, integer, sqliteTable } from "drizzle-orm/sqlite-core"
 
 export const users = sqliteTable("users", {
@@ -14,7 +15,7 @@ export const sessions = sqliteTable("sessions", {
   userId: text("user_id")
     .notNull()
     .references(() => users.id),
-  expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
+  expiresAt: integer("expires_at").notNull(),
 })
 
 export type Session = typeof sessions.$inferSelect
@@ -24,8 +25,12 @@ export const cart = sqliteTable("cart", {
   userId: text("user_id")
     .notNull()
     .references(() => users.id),
-  createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
-  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
+  createdAt: text("created_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: text("updated_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
 })
 
 export type Cart = typeof cart.$inferSelect

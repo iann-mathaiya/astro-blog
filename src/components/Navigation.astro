@@ -28,7 +28,7 @@ const { pathname } = Astro.url
           href={href}
           class={twMerge(
             "text-sm text-gray-500 hover:text-orange-600 hover:underline hover:decoration-orange-400 transition-colors",
-            pathname === href && "text-orange-500"
+            pathname === href && "text-orange-500 hover:no-underline"
           )}
         >
           {label}
