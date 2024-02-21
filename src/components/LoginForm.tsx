@@ -10,7 +10,8 @@ export default function LoginForm() {
       method: "POST",
       body: formData,
     })
-    // const result = await response.json()
+
+    console.log(response)
 
     if (response.status === 200) return (window.location.href = "/store")
   }

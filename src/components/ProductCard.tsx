@@ -1,13 +1,13 @@
 import type { CollectionEntry } from "astro:content"
 
 type ProductProps = {
-    product: CollectionEntry<"products">
-  }
+  product: CollectionEntry<"products">
+}
 
 export default function ProductCard({ product }: ProductProps) {
   return (
     <li className='group border border-gray-100'>
-      <a href={`/products/${product.id}/`}>
+      <a href={`/products/${product.id}`}>
         <div className=' aspect-square overflow-hidden'>
           <img
             className='aspect-square object-contain object-center group-hover:scale-125 transition-all ease-in-out duration-500 delay-150'

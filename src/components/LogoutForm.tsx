@@ -7,7 +7,8 @@ export default function LogoutForm() {
     const response = await fetch("/api/logout", {
       method: "POST",
     })
-    // const result = await response.json()
+    
+    console.log(response)
 
     if (response.status === 200) return (window.location.href = "/store")
 

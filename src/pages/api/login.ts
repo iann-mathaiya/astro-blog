@@ -66,15 +66,6 @@ export async function POST(context: APIContext): Promise<Response> {
     sessionCookie.attributes
   )
 
-  return new Response(
-    JSON.stringify({
-      message: "logged in successfully",
-    }),
-    {
-      status: 200,
-      headers: {
-        Location: "/store",
-      },
-    }
-  )
+  return context.redirect('/store')
+
 }

@@ -6,7 +6,7 @@ type FormInputProps = {
 
 export default function FormInput({ label, name, type = 'text' }: FormInputProps) {
   return (
-    <div className='w-2/4'>
+    <div className='w-full sm:w-2/4'>
       <label
         htmlFor={name}
         className='block text-sm font-medium leading-6 text-gray-600'
